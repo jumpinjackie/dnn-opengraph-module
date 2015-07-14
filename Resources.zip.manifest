@@ -1,0 +1,108 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Default.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Settings.ascx.resx</name>
+    </file>
+    <file>
+      <path>BuildProcessTemplates/</path>
+      <name>DefaultTemplate.xaml</name>
+    </file>
+    <file>
+      <path>BuildProcessTemplates/</path>
+      <name>UpgradeTemplate.xaml</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>OpenGraphController.vb</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>OpenGraphWriter.vb</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>WnsPortalModuleBase.vb</name>
+    </file>
+    <file>
+      <path>Config/</path>
+      <name>HanderMerge-Add.xml.resources</name>
+    </file>
+    <file>
+      <path>Config/</path>
+      <name>HanderMerge-Remove.xml.resources</name>
+    </file>
+    <file>
+      <path>Config/</path>
+      <name>placeholder.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>Default.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Default.ascx.designer.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>Default.ascx.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>License.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>Module.css</name>
+    </file>
+    <file>
+      <path>My Project/</path>
+      <name>AssemblyInfo.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>releasenotes.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx.designer.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>SiteConfig.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>SiteConfig.ascx.designer.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>SiteConfig.ascx.vb</name>
+    </file>
+    <file>
+      <path />
+      <name>WillStrohl.Modules.OpenGraph.sln</name>
+    </file>
+    <file>
+      <path />
+      <name>WillStrohl.Modules.OpenGraph.vbproj</name>
+    </file>
+    <file>
+      <path />
+      <name>WillStrohl.OpenGraph.dnn</name>
+    </file>
+  </files>
+</dotnetnuke>
