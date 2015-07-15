@@ -30,6 +30,7 @@
 'ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
 'DAMAGE.
 '
+Imports DotNetNuke.Services.FileSystem
 Imports DotNetNuke.Entities.Controllers
 Imports DotNetNuke.Entities.Modules
 Imports DotNetNuke.Services.Localization
@@ -130,7 +131,9 @@ Namespace WillStrohl.Modules.OpenGraph
             Get
                 If String.IsNullOrEmpty(p_Image) Then
                     If Not Settings(OG_IMAGE_SETTING) Is Nothing Then
-                        p_Image = Settings(OG_IMAGE_SETTING).ToString()
+                        Dim sRelPath As String = Settings(OG_IMAGE_SETTING).ToString()
+                        Dim fi As IFileInfo = FileManager.Instance().GetFile(PortalSettings.PortalId, sRelPath)
+                        p_Image = String.Format("FileID={0}", fi.FileId)
                     End If
                 End If
 

@@ -361,7 +361,7 @@ Namespace WillStrohl.Modules.OpenGraph
                     '-------------------------------------------------------------------------------'
                     Dim strPortalId As String = oSiteConfig.Attribute(ATTRIBUTE_PORTALID).Value
                     Dim strTabId As String = Regex.Match(currentApp.Request.Url.Query, TABID_MATCH, RegexOptions.IgnoreCase).Groups(1).Value
-                    
+
                     '
                     ' There is a known error here that will occur with the homepage when accessed using a root domain address
                     ' Example:  http://domain.com  vs.  http://domain.com/Home.aspx
@@ -597,7 +597,7 @@ Namespace WillStrohl.Modules.OpenGraph
                         If Not oImage Is Nothing Then
                             ' only append the file tag if the file still exists
                             Dim strImagePath As String = String.Concat(HTTP_PREFIX, HttpAlias, FileManager.Instance().GetUrl(oImage))
-                            NewMarkUp.AppendFormat(IMAGE_OG_TAG_FORMAT, strImagePath)
+                            NewMarkUp.AppendFormat(IMAGE_OG_TAG_FORMAT, System.Web.HttpUtility.UrlPathEncode(strImagePath))
                             If Debug Then
                                 p_DebugText = String.Concat(p_DebugText, String.Format(DEBUG_SUCCESS_FORMAT, String.Concat(IMAGE_ELEMENT, ": ", strImagePath)))
                             End If
@@ -607,7 +607,7 @@ Namespace WillStrohl.Modules.OpenGraph
                         End If
 
                     Else
-                        NewMarkUp.AppendFormat(IMAGE_OG_TAG_FORMAT, SiteElement.Element(IMAGE_ELEMENT).Value)
+                        NewMarkUp.AppendFormat(IMAGE_OG_TAG_FORMAT, System.Web.HttpUtility.UrlPathEncode(SiteElement.Element(IMAGE_ELEMENT).Value))
                         If Debug Then
                             p_DebugText = String.Concat(p_DebugText, String.Format(DEBUG_SUCCESS_FORMAT, String.Concat(IMAGE_ELEMENT, ": ", SiteElement.Element(IMAGE_ELEMENT).Value)))
                         End If
