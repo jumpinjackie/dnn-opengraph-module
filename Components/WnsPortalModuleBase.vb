@@ -132,8 +132,20 @@ Namespace WillStrohl.Modules.OpenGraph
                 If String.IsNullOrEmpty(p_Image) Then
                     If Not Settings(OG_IMAGE_SETTING) Is Nothing Then
                         Dim sRelPath As String = Settings(OG_IMAGE_SETTING).ToString()
-                        Dim fi As IFileInfo = FileManager.Instance().GetFile(PortalSettings.PortalId, sRelPath)
-                        p_Image = String.Format("FileID={0}", fi.FileId)
+                        Dim bAbsUri As Boolean = False
+                        Try
+                            Dim uri As New Uri(sRelPath)
+                            bAbsUri = uri.IsAbsoluteUri
+                        Catch ex As Exception
+                            bAbsUri = False
+                        End Try
+
+                        If (bAbsUri) Then
+                            p_Image = sRelPath
+                        Else
+                            Dim fi As IFileInfo = FileManager.Instance().GetFile(PortalSettings.PortalId, sRelPath)
+                            p_Image = String.Format("FileID={0}", fi.FileId)
+                        End If
                     End If
                 End If
 
