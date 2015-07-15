@@ -322,8 +322,10 @@ Namespace WillStrohl.Modules.OpenGraph
 
 
                     ' get a reference to know if debugging will be done
-                    If Not oSiteConfig.Attribute(ATTRIBUTE_DEBUG) Is Nothing Then
-                        blnDebug = Boolean.Parse(oSiteConfig.Attribute(ATTRIBUTE_DEBUG).Value)
+                    If Not oSiteConfig Is Nothing Then
+                        If Not oSiteConfig.Attribute(ATTRIBUTE_DEBUG) Is Nothing Then
+                            blnDebug = Boolean.Parse(oSiteConfig.Attribute(ATTRIBUTE_DEBUG).Value)
+                        End If
                     End If
 
                     If blnDebug Then
